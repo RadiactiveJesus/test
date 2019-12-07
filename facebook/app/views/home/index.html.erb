@@ -1,0 +1,12 @@
+<h1>Home#index</h1>
+<%= link_to "Label", :controller => :users, :action => :index %>
+<% if current_user %>
+    <%= link_to "All Posts", posts_path %>
+    <%= link_to 'Create Post', new_post_path %>
+  <br><br>
+    Logged in as <%= current_user.first_name %>.
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<% else %>
+  <%= link_to('Register', new_user_registration_path) %> or
+  <%= link_to('Login', new_user_session_path) %>
+<% end %>
