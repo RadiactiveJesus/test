@@ -1,5 +1,5 @@
 <h1>Home#index</h1>
-<%= link_to "Label", :controller => :users, :action => :index %>
+<%= link_to "Users", :controller => :users, :action => :index %>
 <% if current_user %>
     <%= link_to "All Posts", posts_path %>
     <%= link_to 'Create Post', new_post_path %>
