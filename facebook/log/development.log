@@ -11003,3 +11003,883 @@ Completed 200 OK in 206ms (Views: 95.6ms | ActiveRecord: 17.0ms)
   ↳ spec/rails_helper.rb:66
   [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
   ↳ spec/rails_helper.rb:70
+  [1m[35m (16.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/rails_helper.rb:33
+DEPRECATION WARNING: [Devise] including `Devise::TestHelpers` is deprecated and will be removed from Devise.
+For controller tests, please include `Devise::Test::ControllerHelpers` instead.
+ (called from <main> at /home/neo/Desktop/Personal-Projects/ruby_on_rails/rails-final-project-keep-messing-up/facebook/spec/controllers/users_controller_spec.rb:4)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (102.8ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (47.4ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (9.0ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'postgres'[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (151.6ms)[0m  [1m[35mTRUNCATE TABLE "public"."comments", "public"."users", "public"."posts" RESTART IDENTITY CASCADE;[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Started GET "/posts" for 127.0.0.1 at 2019-12-18 10:24:10 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/controllers/posts_management_spec.rb:7
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 32ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-12-18 10:24:11 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (4.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 465ms (Views: 303.3ms | ActiveRecord: 33.2ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#show as HTML
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:22
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (2.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (2.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (2.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (3.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (6.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (2.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:34
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/rails_helper.rb:33
+DEPRECATION WARNING: [Devise] including `Devise::TestHelpers` is deprecated and will be removed from Devise.
+For controller tests, please include `Devise::Test::ControllerHelpers` instead.
+ (called from <main> at /home/neo/Desktop/Personal-Projects/ruby_on_rails/rails-final-project-keep-messing-up/facebook/spec/controllers/users_controller_spec.rb:4)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (6.4ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (14.6ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'postgres'[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (82.4ms)[0m  [1m[35mTRUNCATE TABLE "public"."comments", "public"."users", "public"."posts" RESTART IDENTITY CASCADE;[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Started GET "/posts" for 127.0.0.1 at 2019-12-18 10:38:59 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/controllers/posts_management_spec.rb:7
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-12-18 10:38:59 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (65.3ms)
+Completed 200 OK in 284ms (Views: 184.5ms | ActiveRecord: 17.5ms)
+
+
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#show as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (2.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (3.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:22
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:34
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/rails_helper.rb:33
+DEPRECATION WARNING: [Devise] including `Devise::TestHelpers` is deprecated and will be removed from Devise.
+For controller tests, please include `Devise::Test::ControllerHelpers` instead.
+ (called from <main> at /home/neo/Desktop/Personal-Projects/ruby_on_rails/rails-final-project-keep-messing-up/facebook/spec/controllers/users_controller_spec.rb:4)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (5.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (4.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'postgres'[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (84.2ms)[0m  [1m[35mTRUNCATE TABLE "public"."comments", "public"."users", "public"."posts" RESTART IDENTITY CASCADE;[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Started GET "/posts" for 127.0.0.1 at 2019-12-18 10:39:58 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/controllers/posts_management_spec.rb:7
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 33ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-12-18 10:39:58 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 276ms (Views: 177.7ms | ActiveRecord: 14.7ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (2.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#show as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (10.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (9.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (2.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:22
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:34
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/rails_helper.rb:33
+DEPRECATION WARNING: [Devise] including `Devise::TestHelpers` is deprecated and will be removed from Devise.
+For controller tests, please include `Devise::Test::ControllerHelpers` instead.
+ (called from <main> at /home/neo/Desktop/Personal-Projects/ruby_on_rails/rails-final-project-keep-messing-up/facebook/spec/controllers/users_controller_spec.rb:4)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (5.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (4.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'postgres'[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (86.5ms)[0m  [1m[35mTRUNCATE TABLE "public"."comments", "public"."users", "public"."posts" RESTART IDENTITY CASCADE;[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:45
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Started GET "/posts" for 127.0.0.1 at 2019-12-18 10:40:29 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ spec/controllers/posts_management_spec.rb:7
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 31ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-12-18 10:40:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 256ms (Views: 171.0ms | ActiveRecord: 12.1ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 20ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+Processing by UsersController#show as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (5.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:22
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:57
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  ↳ spec/models/user_spec.rb:16
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anything@example.com"], ["LIMIT", 1]]
+  ↳ spec/models/user_spec.rb:34
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  ↳ spec/rails_helper.rb:61
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ spec/rails_helper.rb:65
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ spec/rails_helper.rb:69

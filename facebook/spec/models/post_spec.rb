@@ -12,8 +12,11 @@ RSpec.describe Post, type: :model do
     end
   end
   context 'Validations' do
+    before :each do
+      @user = create(:user)
+      sign_in @user
+    end
     subject { Post.create }
-    let(:event_creator) { User.new(first_name: 'event_creator', last_name: 'last_name_creator', email: 'email@example.com', password: 'anything') }
     it 'returns true if the form successfully achieves all the validations' do
       subject.content = 'Anything'
       subject.user = event_creator
