@@ -12,7 +12,11 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   # GET /posts/1.json
-  def show(); end
+  def show
+    @like = Like.new
+    @comment = Comment.new
+    @post = Post.find(params[:id])
+  end
 
   # GET /posts/new
   def new
@@ -25,7 +29,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params.merge(user_id: current_user.id))
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
