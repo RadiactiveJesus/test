@@ -3,6 +3,8 @@
 class UsersController < ApplicationController
   def index
     @users = User.all_except(current_user)
+    @not_friends = @users.filter { |user| !current_user.friends.include?(user) }
+    @friendship = Friendship.new
   end
 
   def show
