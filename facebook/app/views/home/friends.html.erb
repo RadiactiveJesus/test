@@ -7,7 +7,7 @@
         </div>
        <%= link_to "Find Friends", users_index_path %>
        <hr>
-        <h1>Friend Request Received</h1>
+        <h6>Friend Request Received</h6>
         <table>
           <thead>
             <tr> 
@@ -19,38 +19,34 @@
             <tbody>
               <tr>
                 <td> <%= friend.id %> </td>
-                <td> <%= render '/users/user_list', user: friend %></td>
+                <td> <%= @user.first_name %></td>
                 <td> <%= link_to "Confirm Request", confirm_friend_path(id: friend.id),
                                                 method: :patch,
-                                                data: { confirm: "Are You sure?" },
-                                                class: "btn btn-success "%> 
+                                                data: { confirm: "Are You sure?" }%> 
                     <%= link_to "Ignore", ignore_request_path(id: friend.id),
                                                 method: :delete,
-                                                data: { confirm: "Are You sure?" },
-                                                class: "btn btn-danger "%></td>
+                                                data: { confirm: "Are You sure?" }%></td>
               </tr>
             </tbody>
           <% end %>
         </table>
         <hr>
-        <h1>Friend Request Sent</h1>
-        <table class="table">
+        <h6>Friend Request Sent</h6>
+        <table>
           <thead>
-            <tr> 
-              <th scope="col">ID</th>
-              <th scope="col">User</th>
-              <th scope="col">Action</th>
+            <tr>  
+              <td >ID</th>
+              <td >User</th>
             </tr>
           </thead>
           <% @user.pending_friends.each do |friend| %>
             <tbody>
               <tr>
                 <td> <%= friend.id %> </td>
-                <td> <%= render '/users/user_list', user: friend %></td>
+                <td> <%= @user.first_name %></td>
                 <td> <%= link_to "Cancel Request", cancel_request_path(id: friend.id),
                                                 method: :delete,
-                                                data: { confirm: "Are You sure?" },
-                                                class: "btn btn-danger "%> </td>
+                                                data: { confirm: "Are You sure?" }%> </td>
               </tr>
             </tbody>
          <% end %>
