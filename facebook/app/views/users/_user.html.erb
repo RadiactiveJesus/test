@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1> 
-        <%= link_to user.first_name, users_show_path(user)%> 
+        <%= user.first_name%> 
       </h1>
 
       <% if current_user.friend?(user) %> 

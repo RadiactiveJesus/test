@@ -1,15 +1,18 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @users = User.all_except(current_user)
-    @not_friends = @users.filter { |user| !current_user.friends.include?(user) }
+    @user = current_user
+    @not_friends = @users.filter { |user| !@user.friends.include?(user) }
     @friendship = Friendship.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.where(id: params[:id])
     @post = Post.new
-    @posts = @user.posts.reverse
+    @posts = Post.where(user_id: params[:id])
   end
 end

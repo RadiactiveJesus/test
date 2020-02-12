@@ -9,17 +9,17 @@
   <br><br>
     <div>
       <h5>Friends:</h5>
-      <% if current_user.friends.empty? %>
+      <% unless current_user.friends.empty? %>
       <div class="d-flex flex-column align-items-center">
+        <% current_user.friends.each do |friend|  %>
+          <%= render 'users/user', user: friend %>
+        <% end %>
+      </div>
+      <% else %>
         <p>
           <%= "Currently you have no friends" %>
         </p>
         <%= link_to "Find Friends", users_index_path%>
-      </div>
-      <% else %>
-        <% current_user.friends.each do |friend|  %>
-          <%= render 'users/user_list', user: friend %>
-        <% end %>
       <% end %>
     </div>
 <% else %>
