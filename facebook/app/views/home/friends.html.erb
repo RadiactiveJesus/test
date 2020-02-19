@@ -19,7 +19,7 @@
             <tbody>
               <tr>
                 <td> <%= friend.id %> </td>
-                <td> <%= @user.first_name %></td>
+                <td> <%= friend.first_name %></td>
                 <td> <%= link_to "Confirm Request", confirm_friend_path(id: friend.id),
                                                 method: :patch,
                                                 data: { confirm: "Are You sure?" }%> 
@@ -43,7 +43,7 @@
             <tbody>
               <tr>
                 <td> <%= friend.id %> </td>
-                <td> <%= @user.first_name %></td>
+                <td> <%= friend.first_name %></td>
                 <td> <%= link_to "Cancel Request", cancel_request_path(id: friend.id),
                                                 method: :delete,
                                                 data: { confirm: "Are You sure?" }%> </td>

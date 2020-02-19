@@ -13,11 +13,14 @@ class FriendshipsController < ApplicationController
   end
 
   def confirm
-    @user = User.find_by(id: params[:id])
-    return unless current_user.confirm_friend(@user)
-
-    flash[:sucess] = 'Friend request confirmed.'
-    redirect_to friends_path
+    user = User.find_by_id(params[:id])
+    if current_user.confirm_friend(user)
+      if requests.any?
+        redirect_back(fallback_location: root_path)
+      else
+        redirect_to root_path
+      end
+    end
   end
 
   def destroy
