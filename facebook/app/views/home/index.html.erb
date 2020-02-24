@@ -10,11 +10,11 @@
     <div>
       <h5>Friends:</h5>
       <% unless current_user.friends.empty? %>
-      <div class="d-flex flex-column align-items-center">
-        <% current_user.friends.each do |friend|  %>
-          <%= render 'users/user', user: friend %>
-        <% end %>
-      </div>
+        <div class="d-flex flex-column align-items-center">
+          <% current_user.friends.each do |friend|  %>
+            <%= render 'users/user', user: friend %>
+          <% end %>
+        </div>
       <% else %>
         <p>
           <%= "Currently you have no friends" %>
