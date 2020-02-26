@@ -7,12 +7,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @friends_posts = current_user.friends.reduce([]) { |all_posts, friend| all_posts + friend.posts }
+    @posts = (current_user.posts + @friends_posts).sort_by(&:created_at).reverse
   end
 
   # GET /posts/1
   # GET /posts/1.json
-  def show(); end
+  def show
+    @like = Like.new
+    @comment = Comment.new
+    @post = Post.find(params[:id])
+  end
 
   # GET /posts/new
   def new
@@ -25,7 +30,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params.merge(user_id: current_user.id))
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save

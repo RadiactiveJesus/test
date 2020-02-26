@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   context 'Tests of table relatioships' do
     describe 'Associations' do
       it 'user has many posts' do
-        assc = User.reflect_on_association(:posts)
+        assc = described_class.reflect_on_association(:posts)
         expect(assc.macro).to eq :has_many
       end
     end

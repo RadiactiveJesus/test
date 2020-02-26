@@ -3,23 +3,29 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  context 'Tests of table relationships' do
-    describe 'Associations' do
-      it 'posts belongs to user' do
-        assc = Post.reflect_on_association(:user)
-        expect(assc.macro).to eq :belongs_to
-      end
+  describe 'Associations' do
+    it 'belongs_to user' do
+      assc = described_class.reflect_on_association(:author)
+      expect(assc.macro).to eq :belongs_to
+    end
+    it 'has_many likes' do
+      assc = described_class.reflect_on_association(:likes)
+      expect(assc.macro).to eq :has_many
+    end
+    it 'has_many comments' do
+      assc = described_class.reflect_on_association(:comments)
+      expect(assc.macro).to eq :has_many
     end
   end
   context 'Validations' do
     before :each do
       @user = create(:user)
-      sign_in @user
+      @auth = log_in @user
+      @post = create(:post, user_id: @user.id)
     end
-    subject { Post.create }
     it 'returns true if the form successfully achieves all the validations' do
-      subject.content = 'Anything'
-      subject.user = event_creator
+      @post.content = 'Anything'
+      @post.user = event_creator
       expect(subject).to be_valid
     end
     it 'returns true if the form doesnt have a content' do

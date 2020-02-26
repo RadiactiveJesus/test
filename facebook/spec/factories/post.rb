@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :post do
-    postcontent { 'MyString' }
-    sequence(:user_id) { |n| n }
+    content { 'Post Content' }
+    user { nil }
   end
 end
