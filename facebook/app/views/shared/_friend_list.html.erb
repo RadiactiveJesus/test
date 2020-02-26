@@ -1,0 +1,15 @@
+<div>
+    <h5>Friends:</h6>
+      <% if user.friends.empty? %>
+      <div class="d-flex flex-column align-items-center">
+        <p>
+          <%= "You don't have any friends yet" %>
+        </p>
+        <%= link_to "Find Friends", users_index_path %>
+      </div>
+      <% else %>
+        <% user.friends.each do |friend|  %>
+          <%= render 'users/user_list', user: friend %>
+        <% end %>
+      <% end %>
+</div>

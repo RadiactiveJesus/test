@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <div>
+      <h1> 
+        <%= user.first_name%> 
+      </h1>
+
+      <% if current_user.friend?(user) %> 
+        <%= link_to "Friends", "#"%>
+
+      <% elsif current_user.pending_friends.include?(user) %>
+        <%= link_to "Friend Request Sent", "#"%>
+
+      <% else %>
+
+        <%= form_for(@friendship, url: create_friend_path) do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id  %>
+          <%= f.hidden_field :friend_id, value: user.id  %>
+          <%= f.submit "Add As Friend"%>
+        <% end %>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>

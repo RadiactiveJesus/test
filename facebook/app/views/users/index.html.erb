@@ -1,5 +1,9 @@
-<div class="mx-auto col-6">
+<div>
+  <%= link_to "Home", root_path %>
     <% @users.each do | user |%>
-        <h3 class="mx-auto mt-4"><%= user.first_name %></h3>
+        <h2><%= user.first_name %></h2>
     <% end %>
+    <div> 
+      <%= render @not_friends %>
+    </div>
 </div>

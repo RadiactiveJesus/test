@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @friends_posts = current_user.friends.reduce([]) { |all_posts, friend| all_posts + friend.posts }
+    @posts = (current_user.posts + @friends_posts).sort_by(&:created_at).reverse
   end
 
   # GET /posts/1
