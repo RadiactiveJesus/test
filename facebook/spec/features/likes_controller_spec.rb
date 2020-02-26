@@ -1,17 +1,23 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-RSpec.describe UsersController, type: :controller do
-  describe 'GET #index' do
+
+RSpec.describe LikesController, type: :controller do
+  before do
+    @auth = sign_in_user('example@email.com')
+    @post = create(:post, user_id: @user.id)
+  end
+
+  describe 'GET #create' do
     it 'returns http success' do
-      get :index
+      get :create
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'GET #show' do
+  describe 'GET #destroy' do
     it 'returns http success' do
-      get :show
+      get :destroy
       expect(response).to have_http_status(:success)
     end
   end

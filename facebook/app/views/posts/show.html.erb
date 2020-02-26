@@ -9,6 +9,32 @@
   <strong>Author:</strong>
   <%= @post.author.first_name %>
 </p>
+<small class="d-flex flex-start">
+  <% if !current_user.liked_posts.ids.include?(@post.id) %>
+    <span> <%= @post.likes.count %> Likes </span>
+    <i>
+      <%= form_for(@like)do | f | %>
+      <%= f.hidden_field :post_id, value: @post.id%>
+      <%= f.hidden_field :status, value: :true %>
+      <%= f.submit "Like" %>
+      <% end %>
+    </i>
+    <% else %>
+    <i>
+      <span> <%= @post.likes.count %> Likes </span>
+      <%= link_to 'unlike', like_path(current_user.likes.ids ), method: :delete %>
+    </i>
+  <% end %>
+</small>
+<div>
+  <h2><strong><%= @post.comments.count %></strong> Comments</h2>
+    <%= render @post.comments %>
+      <div>
+        <hr />
+        <h3>Leave a reply</h3>
+      <%= render 'comments/form' %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
