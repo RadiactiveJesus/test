@@ -14,7 +14,7 @@
       <% else %>
 
         <%= form_for(@friendship, url: create_friend_path) do |f| %>
-          <%= f.hidden_field :user_id, value: current_user.id  %>
+          <%= f.hidden_field :user_id, value: @user.id  %>
           <%= f.hidden_field :friend_id, value: user.id  %>
           <%= f.submit "Add As Friend"%>
         <% end %>

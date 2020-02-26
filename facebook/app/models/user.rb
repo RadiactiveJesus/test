@@ -10,6 +10,12 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: 'post'
   has_many :friendships
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :inverse_friends, through: :inverse_friendships, source: 'user'
+  has_many :confirmed_friendships, -> { where(confirmed: true) }, class_name: 'Friendship', foreign_key: 'user_id', dependent: :destroy
+  has_many :confirmed_friends, through: :confirmed_friendships, source: 'friend'
+  has_many :confirmed_inverse_friends, through: :inverse_friendships, source: 'user'
+  has_many :pending_friendships, -> { where(confirmed: false) }, class_name: 'Friendship', foreign_key: 'user_id', dependent: :destroy
+  has_many :pending_inverse_friendships, -> { where(confirmed: false) }, class_name: 'Friendship', foreign_key: 'friend_id', dependent: :destroy
   validates :first_name, presence: true
   validates :last_name, presence: true
 

@@ -2,29 +2,33 @@
 
 class FriendshipsController < ApplicationController
   def create
-    @friendship = Friendship.new(friendship_params)
-    return unless @friendship.save
 
     @user = User.find_by(id: params[:friendship][:user_id])
     @friend = User.find_by(id: params[:friendship][:friend_id])
+    User.transaction do # ensure both steps happen, or neither happen
+      Friendship.create!(user: current_user, friend: @friend)
+      Friendship.create!(user: friend, friend: current_user)
+    end
 
     flash[:sucess] = 'Friend request have been sent'
     redirect_to users_index_path
   end
 
   def confirm
-    @user = User.find_by(id: params[:id])
-    return unless current_user.confirm_friend(@user)
-
-    flash[:sucess] = 'Friend request confirmed.'
-    redirect_to friends_path
+    user = User.find_by_id(params[:id])
+    if current_user.confirm_friend(user)
+      if requests.any?
+        redirect_back(fallback_location: root_path)
+      else
+        redirect_to root_path
+      end
+    end
   end
 
   def destroy
-    @user = User.find_by(user_id: params[:id])
-    return unless current_user.friends.delete(@user)
-
-    flash[:danger] = 'Friend Removed'
+    @friendship = current_user.friendships.find(params[:id])
+    @friendship.destroy
+    flash[:notice] = "Removed friendship."
     redirect_to users_path
   end
 
