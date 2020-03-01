@@ -1,7 +1,7 @@
 # Facebook Clone
 
 This is a project that emulates the facebook website features such as registering, logging in, posting, making friends.
-You can comment on other griends posts. In future version want to be ble to log in through real facebook!!
+You can comment on other friends posts. In future version want to be ble to log in through real facebook!!
 You can use the app on Heroku here!! : https://cryptic-eyrie-14827.herokuapp.com/
 
 ## Built With
