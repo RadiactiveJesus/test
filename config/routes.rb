@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
-  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions', omniauth_callbacks: 'omniauth_callbacks'}
   get 'users/index'
   get 'users/show'
   get '/friends', to: 'home#friends'

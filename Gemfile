@@ -32,7 +32,7 @@ gem 'devise', '~> 4.2'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
-gem 'omniauth-facebook', '~> 3.0'
+gem 'omniauth-twitter'
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
